@@ -5,7 +5,6 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
-import dev.tr7zw.cosmetizer.screen.LiveEditorScreen;
 import dev.tr7zw.cosmetizer.screen.ModelListScreen;
 import net.minecraft.client.gui.components.Button;
 import net.minecraft.client.gui.screens.PauseScreen;
@@ -22,8 +21,8 @@ public abstract class PauseScreenMixin extends Screen {
 
     @Inject(method = "createPauseMenu", at = @At("RETURN"))
     private void createPauseMenu(CallbackInfo info) {
-        addRenderableWidget(new Button(this.width / 2 - 102, this.height -72, 98, 20,
-                new TranslatableComponent("cosmetizer.screen.liveeditor.title"),
+        addRenderableWidget(new Button(10, 10, 98, 20,
+                new TranslatableComponent("cosmetizer.screen.modellist.title"),
                 button -> this.minecraft.setScreen(new ModelListScreen(this))));
     }
 

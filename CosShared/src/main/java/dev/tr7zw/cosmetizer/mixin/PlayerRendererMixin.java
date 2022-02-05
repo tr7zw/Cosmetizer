@@ -26,8 +26,8 @@ public abstract class PlayerRendererMixin
     @Inject(method = "<init>*", at = @At("RETURN"))
     public void onCreate(CallbackInfo info) {
         try {
-            this.addLayer(new PlayerFeatureRenderer(this, CosmetizerCore.loader.loadModel(new LocalProvider(), "backpack_creeper")));
-            this.addLayer(new PlayerFeatureRenderer(this, CosmetizerCore.loader.loadModel(new LocalProvider(), "amethyst_crown")));
+            //this.addLayer(new PlayerFeatureRenderer(this, CosmetizerCore.loader.loadModel(new LocalProvider(), "backpack_creeper")));
+            //this.addLayer(new PlayerFeatureRenderer(this, CosmetizerCore.loader.loadModel(new LocalProvider(), "amethyst_crown")));
             CosmetizerCore.loader.loadModel(new LocalProvider(), "infinity_gauntlet");
             LiveEditorScreen.modelRenderer = new PlayerFeatureRenderer(this, null);
             this.addLayer(LiveEditorScreen.modelRenderer);

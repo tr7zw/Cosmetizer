@@ -50,7 +50,7 @@ public class ModelListScreen extends Screen {
         int perRow = this.width / 120;
         for(ModelData model : models) {
             addRenderableWidget(new CosmeticButton((id%perRow) * (this.width / perRow) + 10, 30 + (id/perRow)*100, 100, 80, model, (event) -> {
-                System.out.println("boop");
+                this.minecraft.setScreen(new LiveEditorScreen(this, model.name));
             }));
             id++;
         }
